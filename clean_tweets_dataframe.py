@@ -1,3 +1,5 @@
+import pandas as pd
+
 class Clean_Tweets:
     """
     The PEP8 Standard AMAZING!!!
@@ -11,9 +13,8 @@ class Clean_Tweets:
         remove rows that has column names. This error originated from
         the data collection stage.  
         """
-        unwanted_rows = df[df['retweet_count'] == 'retweet_count' ].index
+        unwanted_rows = self.df[self.df[columnnames] == columnnames ].index
         df.drop(unwanted_rows , inplace=True)
-        df = df[df['polarity'] != 'polarity']
         
         return df
     def drop_duplicate(self, df:pd.DataFrame)->pd.DataFrame:
