@@ -77,7 +77,7 @@ class TestTweetDfExtractor(unittest.TestCase):
 	"""
 
     def setUp(self) -> pd.DataFrame:
-        self.df = TweetDfExtractor(tweet_list[:5])
+        self.df = TweetDfExtractor(sampletweetsjsonfile[:5])
         tweet_df = self.df.get_tweet_df()
         
 
