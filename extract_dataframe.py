@@ -40,6 +40,12 @@ class TweetDfExtractor:
         for i in range(len(self.tweets_list)):
             statuses_count.append(self.tweets_list[i]['user']['statuses_count'])
         return statuses_count
+
+    def find_Language(self):
+        language = []
+        for i in range(len(self.tweets_list)):
+            language.append(self.tweets_list[i]['lang'])
+        return language
         
     def find_full_text(self)->list:
         text = 
@@ -48,10 +54,6 @@ class TweetDfExtractor:
     def find_sentiments(self, text)->list:
         
         return polarity, self.subjectivity
-
-    def find_created_time(self)->list:
-       
-        return created_at
 
     def find_source(self)->list:
         source = 

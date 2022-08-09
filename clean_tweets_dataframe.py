@@ -14,7 +14,7 @@ class Clean_Tweets:
         the data collection stage.  
         """
         unwanted_rows = self.df[self.df[columnnames] == columnnames ].index
-        df.drop(unwanted_rows , inplace=True)
+        df = self.df.drop(unwanted_rows , inplace=True)
         
         return df
     def drop_duplicate(self, df:pd.DataFrame)->pd.DataFrame:
@@ -22,20 +22,19 @@ class Clean_Tweets:
         drop duplicate rows
         """
         
-        ---
+        df = self.df.drop_duplicates()
+
         
         return df
+    
     def convert_to_datetime(self, df:pd.DataFrame)->pd.DataFrame:
         """
         convert column to datetime
         """
-        ----
+        self.df[columns]= pd.to_datetime(self.df[columns])
         
-        ----
         
-        df = df[df['created_at'] >= '2020-12-31' ]
-        
-        return df
+        return self.df
     
     def convert_to_numbers(self, df:pd.DataFrame)->pd.DataFrame:
         """
