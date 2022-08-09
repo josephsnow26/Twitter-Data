@@ -8,7 +8,7 @@ class Clean_Tweets:
         self.df = df
         print('Automation in Action...!!!')
         
-    def drop_unwanted_column(self, df:pd.DataFrame)->pd.DataFrame:
+    def drop_unwanted_column(self, columnnames)->pd.DataFrame:
         """
         remove rows that has column names. This error originated from
         the data collection stage.  
@@ -27,7 +27,7 @@ class Clean_Tweets:
         
         return df
     
-    def convert_to_datetime(self, df:pd.DataFrame)->pd.DataFrame:
+    def convert_to_datetime(self, columns)->pd.DataFrame:
         """
         convert column to datetime
         """
@@ -36,23 +36,27 @@ class Clean_Tweets:
         
         return self.df
     
-    def convert_to_numbers(self, df:pd.DataFrame)->pd.DataFrame:
+    def convert_to_numbers(self, columns)->pd.DataFrame:
         """
         convert columns like polarity, subjectivity, retweet_count
         favorite_count etc to numbers
         """
-        df['polarity'] = pd.----
+        self.df[columns] = pd.to_numeric(self.df[columns])
+#         """
+#         convert columns like polarity, subjectivity, retweet_count
+#         favorite_count etc to numbers
+#         """
         
-        ----
-        ----
-        
-        return df
+        return self.df
     
     def remove_non_english_tweets(self, df:pd.DataFrame)->pd.DataFrame:
         """
         remove non english tweets from lang
         """
         
-        df = ----
-        
+        def remove_non_english_tweets(self, df:pd.DataFrame)->pd.DataFrame:
+            for i in range(len(self.df)):
+                if self.df.language[i] !='eng':
+                    df = self.df.drop(i)
+                
         return df
