@@ -82,15 +82,15 @@ class TestTweetDfExtractor(unittest.TestCase):
         
 
     def test_find_statuses_count(self):
-        self.assertEqual(self.df.find_statuses_count(),[8097,5831,1627,1627,18958])
+        self.assertEqual(self.df.find_statuses_count(),[318, 764, 64, 60, 39])
         
         
     def test_find_followers_count(self):
-        f_count = [20497,65,85,85,910]
+        f_count = [373, 144, 47, 463, 206]
         self.assertEqual(self.df.find_followers_count(), f_count)
 
     def test_find_friends_count(self):
-        friends_count = [2621,272,392,392,2608]
+        friends_count = [888, 1597, 2293, 44, 1313]
         self.assertEqual(self.df.find_friends_count(), friends_count)
 
 #     def test_find_full_text(self):
